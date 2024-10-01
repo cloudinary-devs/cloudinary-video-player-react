@@ -1,4 +1,5 @@
 import VideoPlayer from './components/VideoPlayer';
+import './App.css';
 
 function App() {
   return (
@@ -8,9 +9,16 @@ function App() {
       <h2>Props Example</h2>
       <VideoPlayer
         id="player2"
-        data-cld-source='{"publicId": "glide-over-coastal-beach", "info": {"title": "Glide Over Coastal Beach"}}'
-        data-cld-transformation='{"effect": "blur"}'
-        data-cld-poster-options='{"transformation": {"effect": "blur"}}'
+        publicId="glide-over-coastal-beach"
+        playerConfig={{
+          muted: true,
+          posterOptions: {
+            transformation: { effect: 'blur' },
+          },
+        }}
+        sourceConfig={{
+          info: { title: 'Glide Over Coastal Beach' },
+        }}
       />
     </>
   );
